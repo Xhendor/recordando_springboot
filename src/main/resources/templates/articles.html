@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Articulos Don Jaime</title>
+</head>
+<body>
+
+<table class="table">
+    <thead>
+    <tr>
+        <th>ID Articulo</th>
+        <th>Categoria</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="articulo: ${articulos}">
+        <td th:text="${articulo.getArticleId()}"/>
+        <td th:text="${articulo.getCategory()}"/>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
