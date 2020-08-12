@@ -6,6 +6,7 @@ import com.uabc.edu.pa.recordando.spring.recordando_springboot.repository.Articl
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -21,6 +22,12 @@ public class ArticleService {
     public List<Article> todos(String categoria){
         return repo.findByTitle(categoria);
     }
+    public List<Article> todos(){
+        List<Article> actualList = new ArrayList<Article>();
+        repo.findAll().forEach(actualList::add);
+        return actualList;
+    }
+
     //Borrar con el objeto
     public void delete(Article article){
         repo.delete(article);

@@ -56,7 +56,7 @@ public class IndexController {
         article.setTitle("Laysol");
         service.add(article);
         //Aqui para le ejemplo se obtiene un listado de articulos para enviar al modelo
-       List<Article> articulos= service.todos("Laysol");
+       List<Article> articulos= service.todos();
         model.addAttribute("articulos",articulos);
 
         return "articles";
@@ -87,6 +87,8 @@ public class IndexController {
     @PostMapping("/saveArticle")
     public String saveArticle(@ModelAttribute Article art, Model model) {
         model.addAttribute("articulo", art);
+       //GUARDANDO EL ARTICULO EN LA BD
+        service.add(art);
         return "resArticle";
     }
 }
