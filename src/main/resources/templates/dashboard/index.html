@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Dashboard</title>
+    <link th:href="@{/css/estilo.css}"
+          rel="stylesheet" />
+    <script th:inline="javascript">
+        var nameJs = /*[[${name}]]*/;
+    </script>
+    <script type="text/javascript"  th:src="@{/js/script.js}"></script>
+</head>
+<body>
+<h2>
+    <strong>My Dashboard</strong>
+</h2>
+<p>
+    <strong>Soy la etiqueta Strong</strong>
+    <button type="button" th:onclick="showName(nameJs);">Show Name</button>
+</p>
+
+
+</body>
+</html>

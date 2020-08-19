@@ -22,6 +22,7 @@ public class ArticleService {
     public List<Article> todos(String categoria){
         return repo.findByTitle(categoria);
     }
+   //BUSCAR TODOS
     public List<Article> todos(){
         List<Article> actualList = new ArrayList<Article>();
         repo.findAll().forEach(actualList::add);
